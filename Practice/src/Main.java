@@ -3,30 +3,29 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car c1 = new Car();
-        Car c2 = new Car(c1);
-        Car c3 = c1;
+        Parent p = new Child();
+        Child c = new Child();
+
+        System.out.println("p.x="+p.x);
+        p.method();
+        System.out.println();
+        System.out.println("c.x="+c.x);
+        c.method();
     }
 }
 
-class Car{
-    String color;
-    String gearType;
-    int door;
-
-    Car(){
-        this("white","auto",4);
+class Parent{
+    int x = 100;
+    void method(){
+        System.out.println("Parent Method");
     }
+}
 
-    Car(String color, String gearType, int door){
-        this.color=color;
-        this.gearType=gearType;
-        this.door=door;
-    }
-
-    Car(Car c){
-        color =c.color;
-        gearType=c.gearType;
-        door=c.door;
+class Child extends Parent{
+    int x=200;
+    void method(){
+        System.out.println("x="+x);
+        System.out.println("super.x="+super.x);
+        System.out.println("this.x="+this.x);
     }
 }
