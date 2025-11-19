@@ -37,6 +37,7 @@ class SutdaDeck{
     SutdaCard[] cards = new SutdaCard[CARD_NUM];
 
     SutdaDeck(){
+        /*
         for(int i=0;i<CARD_NUM;i++){
             switch(i+1){
                 case 1: case 3: case 8:
@@ -45,6 +46,13 @@ class SutdaDeck{
                 default:
                     cards[i]=new SutdaCard(i%10+1,false);
             }
+
+         */
+        for(int i=0;i<cards.length;i++){
+            int num=i%10+1;
+            boolean isKwang = (i<10)&&(i==1||i==3||i==8);
+
+            cards[i]=new SutdaCard(num,isKwang);
         }
     }
 
@@ -58,6 +66,10 @@ class SutdaDeck{
     }
 
     SutdaCard pick(int index){
+    if(index<0||index>CARD_NUM){
+        System.out.println("잘못된 숫자입니다.");
+        return null;
+    }
         return cards[index];
     }
 

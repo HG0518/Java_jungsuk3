@@ -39,16 +39,25 @@ class Buyer{
 
 
     private void add(Product p){
-        if(i==cart.length) cart=Arrays.copyOf(cart,2*i);
+        //if(i==cart.length) cart=Arrays.copyOf(cart,2*i);
+        if(i>= cart.length){
+            Product[]tmp=new Product[cart.length*2];
+            System.arraycopy(cart,0,tmp,0,cart.length);
+            cart=tmp;
+        }
         cart[i++]=p;
     }
 
     void summary(){
         System.out.print("구입한 물건:");
         int index=0;
+        /*
         while(index<cart.length&&cart[index]!=null){
             System.out.print(cart[index++]+",");
         }
+         */
+        String itemList="";
+        itemList+=cart[i]+",";
         System.out.println();
         System.out.println("사용한 금액:"+(1000-money));
         System.out.println("남은 금액:"+money);
