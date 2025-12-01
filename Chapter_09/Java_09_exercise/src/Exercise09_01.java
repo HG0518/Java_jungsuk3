@@ -21,8 +21,9 @@ class SutdaCard{
         this.isKwang=isKwang;
     }
     public boolean equals(Object obj){
-        if(obj!=null&&obj instanceof SutdaCard){
-            return this.num == ((SutdaCard) obj).num && this.isKwang == ((SutdaCard) obj).isKwang;
+        if(obj instanceof SutdaCard){
+            SutdaCard c=(SutdaCard) obj;
+            return num==c.num&&isKwang==c.isKwang;
         }
         return false;
     }

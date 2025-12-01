@@ -16,6 +16,7 @@ public class Exercise09_10 {
         Arrays.fill(result,' ');
 
         int startIndex;
+
         if(alignment==0)startIndex=0;
         else if(alignment==1)startIndex=(length-strLength)/2;
         else startIndex=length-strLength;

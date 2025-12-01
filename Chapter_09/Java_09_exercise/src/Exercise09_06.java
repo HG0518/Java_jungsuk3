@@ -19,6 +19,7 @@ public class Exercise09_06 {
             str[i]='0';
         for(;i<length;i++)
             str[i]=src.charAt(i-srcLength);
+        //System.arraycopy(src.toCharArray(),0,str,srcLength,src.length());
         return String.valueOf(str);
     }
 }

@@ -10,9 +10,11 @@ public class Exercise09_05 {
         int pos=0;
         while(true){
             pos=src.indexOf(target,pos);
-            if(pos==-1) return count;
+            if(pos==-1) break;
             count++;
             pos+=target.length();
         }
+
+        return count;
     }
 }

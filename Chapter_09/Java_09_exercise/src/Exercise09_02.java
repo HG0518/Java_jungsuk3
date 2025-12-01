@@ -23,8 +23,9 @@ class Point3D{
         this(0,0,0);
     }
     public boolean equals(Object obj){
-        if(obj!=null&&obj instanceof Point3D){
-            return this.x==((Point3D) obj).x&&this.y==((Point3D)obj).y&&this.z==((Point3D) obj).z;
+        if(obj instanceof Point3D){
+            Point3D p=(Point3D) obj;
+            return x==p.x&&z==p.z&&y==p.y;
         }
         return false;
     }
